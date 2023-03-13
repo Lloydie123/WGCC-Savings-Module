@@ -1,0 +1,100 @@
+<odoo>
+  <record id="savings_action" model="ir.actions.act_window">
+    <field name="name">Savings</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">wgcc_savings.wgcc_savings</field>
+    <field name="view_mode">tree,kanban,form</field>
+  </record>
+  <menuitem id="savings_root" name="Savings" sequence="10" action="savings_action"/>
+  <menuitem id="savings_root_menu" name="Savings Menu" parent="savings_root" sequence="2"/>
+
+  <record id="savings_form_view" model="ir.ui.view">
+      <field name="name">Savings</field>
+      <field name="model">wgcc_savings.wgcc_savings</field>
+      <field name="arch" type="xml">
+      
+         <form>
+            <sheet>
+        <header>
+                <h3>Savings Widthrawal Entry</h3>
+              </header>
+            <group>
+            
+            <group>  <field name="id"/> </group>
+             <group>  <field name="name"/> 
+             
+             <field name="search"/>
+              </group>
+               
+            </group>
+
+        <header>
+          <h5>Savings Account Information</h5>
+        </header>
+
+            <group>
+       
+            <group>  
+            <field name="deposit_amount"/> 
+            <field name="Company"/>
+            <field name="last_date_of_widthrawal"/>
+            <field name="withdrawable_balance"/>
+            <field name="bank_code"/>
+            </group>
+
+            <group>  
+            
+            <field name="deposit_date"/> 
+            <field name="current_balance_before_widthrawal"/>
+            <field name="saving_deposit_deduction"/>
+            <field name="account_number"/>
+          
+            </group>
+               
+            </group>
+
+      <header>
+      <h5>Widthrawal Transaction</h5>
+      </header>
+
+            <group>
+       
+            <group>  
+            <field name="withdrawable_mode"/> 
+            <field name="withdrawal_slip_no"/>
+            <field name="date_of_widthrawal"/>
+            <field name="release_date"/>
+            <field name="cheque_information"/>
+            <field name="cheque_no"/>
+            <field name="prepared_by"/>
+            <field name="posted_by"/>
+            </group>
+
+            <group>  
+            
+            <field name="amount_to_be_widthrawn"/> 
+            <field name="cash"/>
+            <field name="is_atm"/>
+            <field name="is_cheque"/>
+            <field name="bank"/>
+            <field name="cancelled_by"/>
+            <field name="cancel_reason"/>
+            </group>
+               
+            </group>
+
+
+
+
+
+          </sheet>
+                
+     
+        </form>
+      </field>
+      
+  </record>
+
+
+</odoo>
+
