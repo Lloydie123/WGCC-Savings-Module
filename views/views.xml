@@ -14,11 +14,92 @@
       <field name="arch" type="xml">
       
          <form>
+         <header>
+          <field name="status" widget="statusbar" />
+         </header>
             <sheet>
+<style>
+.parent {
+  display: flex;
+
+}
+
+.column {
+  width: 100%;
+
+  padding: 5px;
+}
+</style>
         <header>
+        
                 <h3>Savings Widthrawal Entry</h3>
-              </header>
-            <group>
+         
+        </header>
+        
+
+        <div class="parent">
+            <div class="column">  <group colspan="1">  <field name="id"/> </group></div>
+            <div class="column"> <group><field name="name"/> </group></div>
+            <div class="column"><group><field name="search_field"/> </group></div>
+        </div>
+        <div class="column">   <h5> Savings Account Information </h5></div>
+       
+        <div class="parent">
+    
+            <div class="column">  <group>  <field name="deposit_amount"/> </group></div>
+            <div class="column"> <group><field name="deposit_date"/> </group></div>
+            <div class="column"> <group><field name="Company"/> </group></div>
+        </div>
+
+        <div class="parent">
+            <div class="column">  <group>  <field name="current_balance_before_widthrawal"/> </group></div>
+            <div class="column"> <group><field name="last_date_of_widthrawal"/> </group></div>
+            <div class="column"> <group><field name="saving_deposit_deduction"/> </group></div>
+        </div>
+        <div class="parent">
+            <div class="column"> <group><field name="withdrawable_balance"/> </group></div>
+            <div class="column"> <group><field name="account_number"/> </group></div>
+            <div class="column"> <group><field name="bank_code"/> </group></div>
+        </div>
+        <div class="column">   <h5> Withdrawal Transaction: </h5></div>
+         <div class="parent">
+            <div class="column"> <group><field name="withdrawable_mode"/> </group></div>
+            <div class="column"> <group><field name="amount_to_be_widthrawn"/> </group></div>
+            <div class="column"> <group><field name="withdrawal_slip_no"/> </group></div>
+        </div>
+        <div class="parent">
+            <div class="column"> <group><p> Cash </p></group></div>
+            <div class="column"> <group><field name="cash" />  </group></div>
+            <div class="column"> <group><field name="date_of_widthrawal" /></group></div>
+        </div>
+         <div class="parent">
+            <div class="column"> <group><field name="is_atm" /></group></div>
+            <div class="column"></div>
+            <div class="column"> <group><field name="release_date" /></group></div>
+        </div>
+
+         <div class="parent">
+            <div class="column"> <group><field name="is_cheque" /></group></div>
+            <div class="column"><group><field name="cheque_information" /></group></div>
+            <div class="column"> <group><field name="bank" /></group></div>
+            <div class="column"> <group><field name="cheque_no" /></group></div>
+        </div>
+
+        <div class="parent">
+
+            <div class="column"><group><field name="prepared_by" /></group></div>
+          
+            <div class="column"> <group><field name="cheque_no" /></group></div>
+        </div>
+
+         <div class="parent">
+
+            <div class="column"><group><field name="posted_by" /></group></div>
+          
+            <div class="column"> <group><field name="cancel_reason" /></group></div>
+        </div>
+
+            <!-- <group>
             
             <group>  <field name="id"/> </group>
              <group>  <field name="name"/> 
@@ -29,7 +110,9 @@
             </group>
 
         <header>
-          <h5>Savings Account Information</h5>
+        <strong>
+          <h5 style="font-weight: bold;">Savings Account Information</h5>
+        </strong>
         </header>
 
             <group>
@@ -81,7 +164,7 @@
             <field name="cancel_reason"/>
             </group>
                
-            </group>
+            </group> -->
 
 
 
@@ -96,5 +179,19 @@
   </record>
 
 
+  <!-- For the tree view -->
+
+  <record id="view_savings_tree" model="ir.ui.view">
+    <field name="name">wgcc.savings.tree</field> 
+    <field name="model">wgcc_savings.wgcc_savings</field> 
+    <field name="arch" type="xml">
+        <tree>
+           <field name="id" />
+           <field name="Company" />
+           <field name="status" />
+        </tree>
+
+    </field>
+  </record>
 </odoo>
 
